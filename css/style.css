@@ -1,0 +1,77 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;900&display=swap');
+:root {
+    font-size: 16px;
+    --main-color: #21243D;
+    --primary-color:#FF6464;
+    --dark-blue:#142850;
+    --secondary-color:#00A8CC;
+}
+    
+
+*{
+    font-family: 'Heebo', sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+h1,h2,h3,h4 {
+    color: var(--main-color);
+}
+button{
+    width: 200px;
+    height: 50px;
+    background: var(--primary-color);
+    border: none;
+    color: #FFFFfF;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+.container{
+    width: 860px;
+    margin: 0 auto;
+}
+header{
+width: 100%;
+height: 80px;
+display: flex;
+justify-content: flex-end;/*прировнять к правой стороне*/
+align-items: center;
+
+}
+header ul {
+    display: flex;
+    list-style: none;
+    width: 300px;
+    justify-content: space-between;/*равное расстояние у элементов*/
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: black;
+}
+header ul li a{
+    text-decoration: none;
+    color: black;
+}
+.content{
+    display: flex;
+    margin-top: 120px;
+    height: 300px;
+    justify-content: space-between;
+}
+.content_left{
+    display: flex;
+    flex-direction: column;/*контент в колонках*/
+    justify-content: space-between;
+    width: 60%;
+
+}
+.content .content_right{
+    display: flex;
+    align-items: center;
+}
+.content_left  h1{
+font-size: 2.75rem;
+}
+.content .content_right img{
+    filter: drop-shadow(-5px -13px 0px #EDF7Fa);
+}

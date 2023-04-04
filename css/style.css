@@ -11,7 +11,9 @@
     --grey-color: #8695a4;
 }
     
-
+body, html{
+    overflow-x: hidden;
+}
 *{
     font-family: 'Heebo', sans-serif;
     box-sizing: border-box;
@@ -21,7 +23,7 @@
 h1,h2,h3,h4 {
     color: var(--main-color);
 }
-button{
+.content button{
     width: 200px;
     height: 50px;
     background: var(--primary-color);
@@ -261,4 +263,54 @@ margin-bottom: 20px;
 :root {
     font-size: 14px;
 }
+}
+button.burger{
+    border: none;
+    width: 40px;
+    height: 28px;
+    background: white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+}
+button.burger .line{
+    width: 100%;
+    height: 2px;
+    background: black;
+    display: block;
+    transition: 0.3s;
+  
+}
+button.burger.open .line.line-2{
+    width: 0px;
+}
+button.burger.open .line.line-1{
+   transform: rotateZ(45deg) translateX(45%);
+}
+button.burger.open .line.line-3{
+    transform: rotateZ(-45deg) translateX(45%);
+ }
+@media screen and (max-width: 576px) {
+header ul{
+    flex-direction: column;
+    align-items: flex-end;
+   position: absolute;
+   top: 100px;
+   height: 200px;
+   background: white;
+   z-index: 2;
+   padding: 20px 10px;
+   width: 100px;
+   right: -100%;
+    transition: 0.3s ;
+}
+header ul.menu.open{
+    right: 0;
+}
+button.burger{
+    display: flex;
+}
+
 }

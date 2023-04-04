@@ -9,12 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
     <main>
         <div class="container">
         <header>
-                <ul>
+                <ul class="menu">
                 <li>
                     <a href="">Works</a>
                 </li>
@@ -25,6 +26,11 @@
                     <a href="">Contacts</a>
                 </li>
             </ul>
+            <button class="burger" onclick="toggleMenu()">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </button>
         </header>
         <div class="content">
             <DIV class="content_left">
@@ -137,11 +143,12 @@
                     </div>
                 </a></li>
             </ul>
-            
+          
         </nav>
         <p>Copyright ©2020 All rights reserved </p>
     </footer>
     </main>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

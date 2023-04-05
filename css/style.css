@@ -10,7 +10,12 @@
     --border-grey: #e0e0e0;
     --grey-color: #8695a4;
 }
-    
+h1{
+    font-size: 2.75rem;
+}
+p{
+    font-size: 16px;
+}
 body, html{
     overflow-x: hidden;
 }
@@ -20,9 +25,24 @@ body, html{
     margin: 0px;
     padding: 0px;
 }
+section h3{
+    font-size:   1.4rem;
+    font-weight: 400;
+  }
 h1,h2,h3,h4 {
     color: var(--main-color);
 }
+section.work-detailed h3, section.work-detailed h4{
+font-weight: 500;
+margin: 5px 0;
+}
+
+section.work-detailed h3{
+font-size: 1.875rem;
+}
+section.work-detailed h4{
+    font-size: 1.5rem;
+    }
 .content button{
     width: 200px;
     height: 50px;
@@ -45,6 +65,10 @@ justify-content: flex-end;/*прировнять к правой стороне*
 align-items: center;
 
 }
+h3 a{
+    color: inherit;
+    text-decoration: none;
+}
 
 header ul {
     display: flex;
@@ -57,7 +81,10 @@ header ul {
 }
 header ul li a{
     text-decoration: none;
-    color: black;
+    color: var(--main-color);
+}
+header ul li a.active{
+    color: var(--primary-color);
 }
 .content{
     display: flex;
@@ -87,10 +114,10 @@ section{
     padding: 32px 0;
 
 }
-section h3{
-  font-size:   1.4rem;
-  font-weight: 400;
+section-header h2{
+    font-size: 2.125rem;
 }
+
 
 section a.all{
 color: var(--secondary-color);
@@ -116,6 +143,22 @@ section.recent .recent-card-container{
     margin-top: 22px;
 
 }
+section.recent.blogs{
+    background: #FFFFfF;
+}
+section.recent.blogs .recent-container{
+    flex-direction: column;
+}
+section.recent.blogs .recent-container .recent-card-container{
+    padding: 30px 0;
+    max-width: fit-content;
+    min-height: auto;
+    height: 200px;
+    border-bottom: 1px solid var(--border-grey);
+}
+section.recent.blogs .recent-card-container .description p:nth-child(3){
+    color: var(--grey-color);
+}
 section.recent .recent-card-container h3{
     font-size: 1.625rem;
     font-weight: 700;
@@ -125,7 +168,29 @@ display: flex;
 justify-content: space-between;
 max-width: 280px;
 }
+section.works .works-header .description{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 290px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 
+section.works .works-header .description .date{
+width: 62px;
+height: 26px;
+background-color: var(--primary-color);
+border-radius: 16px;
+color: #FFFFfF;
+font-size: 1.125rem;
+font-weight: 900;
+text-align: center;
+}
+section.works .works-header .description .tag{
+    font-size: 1.25rem;
+    color: var(--grey-color);
+}
 section.recent .recent-card-container .description .line{
     width: 1px;
     height: 20px;
@@ -208,6 +273,16 @@ margin-bottom: 20px;
 .tg{
     background-image: url(../img/tg.svg);
 }
+.work-detailed img{
+    margin: 30px 0;
+    width: 100%;
+}
+.work-detailed img.first-img{
+margin: 50px 0;
+}
+.work-detailed h3{
+
+}
 @media screen and (max-width: 900px) {
     .container{
         max-width: 90%;
@@ -230,6 +305,7 @@ margin-bottom: 20px;
     .content .content_left button{
         margin-top: 36px;
     }
+ 
     section.works .works-header h3,
     section.recent .recent-header h3
     {
@@ -275,7 +351,13 @@ button.burger{
     flex-direction: column;
     justify-content: space-between;
     display: none;
+    transform: translateX(0px);
 }
+button.burger.open{
+    transform: translateX(-20px);
+    transition: .3s;
+}
+
 button.burger .line{
     width: 100%;
     height: 2px;
@@ -304,11 +386,16 @@ header ul{
    z-index: 2;
    padding: 20px 10px;
    width: 100px;
-   right: -100%;
+   transform: translateY(100px);
+   opacity: 0;
+   pointer-events: none;
     transition: 0.3s ;
+
 }
 header ul.menu.open{
-    right: 0;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
 }
 button.burger{
     display: flex;

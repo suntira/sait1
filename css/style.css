@@ -45,6 +45,7 @@ justify-content: flex-end;/*прировнять к правой стороне*
 align-items: center;
 
 }
+
 header ul {
     display: flex;
     list-style: none;
